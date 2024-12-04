@@ -1,6 +1,9 @@
-package main
+package baekjoon_test
 
-import "testing"
+import(
+    "testing"
+    "algorithm/baekjoon"
+)
 
 func TestMain(t *testing.T) {
     tests := []struct {
@@ -18,7 +21,7 @@ func TestMain(t *testing.T) {
     }
 
     for _, tt := range tests {
-        result := decode(tt.input, tt.step)
+        result := baekjoon.Decode(tt.input, tt.step)
         if result != tt.expected {
             t.Errorf("decode(%s, %d) = %s; want %s", tt.input, tt.step, result, tt.expected)
         }
