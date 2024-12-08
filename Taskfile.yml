@@ -1,0 +1,22 @@
+version: '3'
+
+vars:
+  app: algorithm
+
+tasks:
+  default:
+    cmds:
+      - go run cmd/*
+
+  build:
+    cmds:
+      - go build -o bin/{{.app}} cmd/*
+      - ./bin/{{.app}}
+
+  test:
+    cmds:
+      - go test -v ./...
+
+  clean:
+    cmds:
+      - rm -rf bin/*
